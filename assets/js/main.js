@@ -59,6 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
     projectOverlay.classList.remove('hidden');
   }
 
+  // --- Event Listeners: Dropdown ---
+  const dropBtn = document.querySelector('.dropbtn');
+  if (dropBtn) {
+    dropBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+    });
+  }
+
   // --- Event Listeners: About ---
   aboutLink.addEventListener('click', (e) => {
     e.preventDefault();
@@ -94,20 +102,20 @@ document.addEventListener('DOMContentLoaded', () => {
   closeProjectBtn.addEventListener('click', () => {
     projectOverlay.classList.add('hidden');
     logoContainer.style.display = 'flex'; 
-    projectImageGrid.innerHTML = ''; // Clear the grid when closed
+    projectImageGrid.innerHTML = '';
   });
 
   // --- Event Listeners: Lightbox ---  
   projectImageGrid.addEventListener('click', (e) => {
     if (e.target.tagName === 'IMG') {
-      lightboxImage.src = e.target.src; // Copy the image source
-      lightboxOverlay.classList.remove('hidden'); // Show the lightbox
+      lightboxImage.src = e.target.src;
+      lightboxOverlay.classList.remove('hidden');
     }
   });
 
   function closeLightbox() {
     lightboxOverlay.classList.add('hidden');
-    lightboxImage.src = ""; // Clear the image
+    lightboxImage.src = "";
   }
 
   closeLightboxBtn.addEventListener('click', closeLightbox);
@@ -118,4 +126,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-}); // <-- Everything must stay safely inside this final closing bracket!
+}); 
