@@ -75,7 +75,7 @@ html, body {
   gap: 4px;
 }
 
-.dropdown-content {
+.nav-menu ul .dropdown-content {
   display: none;
   position: absolute;
   top: 100%;
@@ -92,18 +92,18 @@ html, body {
   text-align: center;
 }
 
-.nav-menu .dropdown-content {
+.nav-menu ul .dropdown-content {
   flex-wrap: nowrap;
+}
+
+.nav-menu ul .dropdown:hover .dropdown-content {
+  display: flex; 
 }
 
 .dropdown-content li a {
   font-weight: normal;
   padding: 5px 15px;
   display: block;
-}
-
-.dropdown:hover .dropdown-content {
-  display: flex; 
 }
 
 /* LOGO */
