@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rosalyn Yoon</title>
+  
+  <meta
+    name="description"
+    content="Rosalyn Yoon is an Artist based in Pasadena, CA."
+  />
+  <meta
+    name="keywords"
+    content="Rosalyn Yoon, Artist, Los Angeles, Visual Art, Contemporary Art, Digital Art, Illustrator, Needle Felting, Wool, Sculpture, Art Exhibitions, Art Portfolio"
+  />
+  <meta name="author" content="Rosalyn Yoon" />
+
+  <!-- p5.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.min.js"></script>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="assets/img/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+
+  <!-- Typeface -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+  />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- JSON-L  -->
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Rosalyn Yoon",
+      "jobTitle": "Artist",
+      "url": "https://www.rosalynyoon.com",
+      ]
+    }
+  </script>
+</head>
+
+<body>
+  <!-- p5.js Background -->
+  <div id="sketch-container"></div>
+
+  <!-- Header -->
+  <header id="header">
+    <img 
+      id="header-img" 
+      src="assets/img/RY_Header.png" 
+      alt="Rosalyn Yoon" 
+    />
+    <nav class="nav-menu">
+      <ul> 
+        <!--<li><a href="#" class="project-link" data-project="work">Work</a></li>-->
+        <li><a href="#" class="project-link" data-project="books">Books</a></li>
+        <li><a href="#" class="project-link" data-project="bestFriends">Best Friends</a></li>
+        <li><a href="#" class="project-link" data-project="tandR">T & R</a></li>
+        <li><a href="#" class="project-link" data-project="softSculpture">Soft Sculpture</a></li>
+        <li><a href="#about" id="about-link">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Logo -->
+  <div id="logo-container">
+    <img 
+      id="logo-img" 
+      src="assets/img/RY_Logo.png" 
+      alt="Logo" 
+      style="cursor: pointer;"
+    />
+  </div>
+
+  <!-- About -->
+  <div id="about-overlay" class="hidden">
+    <div id="about-box">
+      <button id="close-about" aria-label="Close About">&times;</button>
+      <p class="font-italic">
+        Hi! I'm <b>Rosalyn</b>. If you'd like to say <b>hello</b>, feel free to reach out at <a href=“mailto:rosalyn@rosalynyoon.com”>rosalyn@rosalynyoon.com</a>.
+      </p>
+      </p>
+    </div>
+  </div>
+
+  <!-- Projects -->
+<div id="project-overlay" class="hidden">
+    <div id="project-box">
+      <button id="close-project" aria-label="Close Project">&times;</button>
+      <h2 id="project-title">Project Title</h2>
+      
+      <div id="project-image-grid"></div>
+      
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-content">
+      <a href="mailto:rosalyn@rosalynyoon.com" aria-label="Email"
+        ><i class="ri-mail-line"></i
+      ></a>
+      <a href="https://www.instagram.com/rosalynyoon/" aria-label="Instagram"
+        ><i class="ri-instagram-line"></i
+      ></a>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/sketch.js"></script>
+
+</body>
+</html>
