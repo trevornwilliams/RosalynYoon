@@ -1,5 +1,6 @@
 let theShader;
-let interactionTime = 0; // Tracks time based ONLY on mouse movement
+let trailBuffer; 
+let interactionTime = 0;
 
 const vert = `
 attribute vec3 aPosition;
@@ -16,26 +17,24 @@ const frag = `
 precision mediump float;
 varying vec2 vTexCoord;
 uniform vec2 u_resolution;
-uniform vec2 u_mouse;
 uniform float u_time;
+uniform sampler2D u_trailMap; 
 
-// Your new color palette normalized to 0.0 - 1.0
-const vec3 paper = vec3(0.980, 0.969, 0.949); // FAF7F2 (Base Canvas)
-const vec3 p1    = vec3(0.929, 0.867, 0.800); // EDDDCC
-const vec3 p2    = vec3(0.867, 0.620, 0.580); // DD9E94
-const vec3 p3    = vec3(0.871, 0.784, 0.725); // DEC8B9
-const vec3 p4    = vec3(0.988, 0.886, 0.561); // FCE28F
+// --- CHARCOAL & PAPER PALETTE ---
+const vec3 paperColor = vec3(0.95, 0.94, 0.91); 
+const vec3 charcoalDark = vec3(0.20, 0.20, 0.22); 
+const vec3 charcoalLight = vec3(0.60, 0.60, 0.62); 
 
-// Pseudo-random noise function
+// Pseudo-random noise function for grain
 float hash(vec2 p) {
   return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453);
 }
 
-// Fractal Brownian Motion for organic watercolor bleeding
+// Organic smudge shapes for texture
 float fbm(vec2 uv) {
   float v = 0.0;
   float a = 0.5;
-  for(int i = 0; i < 5; i++) {
+  for(int i = 0; i < 4; i++) {
     v += a * hash(uv);
     uv *= 2.0;
     a *= 0.5;
@@ -46,40 +45,36 @@ float fbm(vec2 uv) {
 void main() {
   vec2 uv = vTexCoord;
   
-  // Fix aspect ratio so the cursor interaction remains perfectly circular
+  // Flip the Y axis to match p5.js texture coordinates
+  vec2 texUV = vec2(uv.x, 1.0 - uv.y);
+  
+  // Read the hidden trail buffer
+  float influence = texture2D(u_trailMap, texUV).r;
+  
   vec2 aspect = vec2(u_resolution.x / u_resolution.y, 1.0);
   vec2 st = uv * aspect;
-  vec2 mouseSt = u_mouse * aspect;
   
-  // Calculate distance from current pixel to the cursor
-  float dist = length(st - mouseSt);
-  
-  // Warp the coordinate space using noise and our drag-driven time
+  // The warp is driven by the scattered dust
+  float warpStrength = influence * 0.12; 
   vec2 warp = uv + vec2(
-      fbm(st * 3.0 + u_time * 0.5) - 0.5,
-      fbm(st * 3.0 - u_time * 0.5) - 0.5
-  ) * 0.2;
+      fbm(st * 5.0 + u_time * 0.5) - 0.5,
+      fbm(st * 5.0 - u_time * 0.5) - 0.5
+  ) * warpStrength;
   
-  // Generate a noise map for the edges of the paint
-  float noiseVal = fbm(warp * 5.0);
+  float smudgePattern = fbm(warp * 8.0);
   
-  // Create a soft brush radius around the mouse
-  float influence = smoothstep(0.4, 0.0, dist + noiseVal * 0.25);
+  // --- COLOR BLENDING ---
+  // Base paper with a very faint, integrated static charcoal dust map
+  vec3 baseColor = mix(paperColor, charcoalLight, smoothstep(0.4, 0.8, fbm(uv * 6.0)) * 0.15);
   
-  // Map the palette colors organically across the warped space
-  float colorIdx = fract(warp.x * 2.0 + warp.y * 2.0 + u_time * 0.2);
-  vec3 paint;
-  if (colorIdx < 0.25) paint = mix(p1, p2, smoothstep(0.0, 0.25, colorIdx));
-  else if (colorIdx < 0.50) paint = mix(p2, p3, smoothstep(0.25, 0.50, colorIdx));
-  else if (colorIdx < 0.75) paint = mix(p3, p4, smoothstep(0.50, 0.75, colorIdx));
-  else paint = mix(p4, p1, smoothstep(0.75, 1.0, colorIdx));
+  // Apply the dark charcoal only within the dusty mask from the fading trail
+  vec3 finalColor = mix(baseColor, charcoalDark, smoothstep(0.2, 0.9, smudgePattern) * (influence * 0.9));
 
-  // Blend the paint into the paper based on the cursor influence
-  // Also add a very slight static grain to simulate paper texture
-  float grain = (hash(uv * 500.0) - 0.5) * 0.03;
-  vec3 finalCol = mix(paper, paint, influence) + grain;
+  // --- PAPER GRAIN ---
+  float grain = (hash(uv * 800.0) - 0.5) * 0.08;
+  finalColor += grain;
 
-  gl_FragColor = vec4(finalCol, 1.0);
+  gl_FragColor = vec4(finalColor, 1.0);
 }
 `;
 
@@ -89,25 +84,68 @@ function preload() {
 
 function setup() {
   let canvas = createCanvas(windowWidth, windowHeight, WEBGL);
-  noStroke();
   canvas.parent('sketch-container'); 
+  noStroke();
+  
+  trailBuffer = createGraphics(windowWidth, windowHeight);
+  trailBuffer.background(0); 
 }
 
 function draw() {
   background(0);
   
-  // Calculate how far the mouse has moved this frame
+  // 1. FASTER FADE
+  trailBuffer.noStroke();
+  // Changed from 5 to 15. Higher number = erases faster.
+  trailBuffer.fill(0, 15); 
+  trailBuffer.rect(0, 0, width, height);
+  
+  // 2. DRAW THIN CORE + DUST PARTICLES
   let mouseSpeed = dist(mouseX, mouseY, pmouseX, pmouseY);
+  if (mouseSpeed > 0) {
+    interactionTime += mouseSpeed * 0.003; 
+    
+    trailBuffer.noStroke();
+    
+    // Draw more steps for a smoother, denser core
+    let steps = max(1, floor(mouseSpeed)); 
+    
+    for (let i = 0; i < steps; i++) {
+      let t = i / steps;
+      let x = lerp(pmouseX, mouseX, t);
+      let y = lerp(pmouseY, mouseY, t);
+      
+      // -- A. The Thin Core Line --
+      trailBuffer.fill(255, 180); 
+      // Much smaller ellipse (random 1 to 3 pixels)
+      let coreSize = random(1, 3); 
+      trailBuffer.ellipse(x + random(-1, 1), y + random(-1, 1), coreSize, coreSize);
+
+      // -- B. The Scattered Dust --
+      // Generates 4 to 8 tiny dust particles per step
+      let dustCount = floor(random(4, 8)); 
+      for (let p = 0; p < dustCount; p++) {
+        let angle = random(TWO_PI);
+        // Spreads out between 2 and 15 pixels away from the core
+        let spread = random(2, 15); 
+        
+        // Very faint dust (alpha 20 to 60)
+        trailBuffer.fill(255, random(20, 60)); 
+        let dustSize = random(1, 4);
+        trailBuffer.ellipse(
+          x + cos(angle) * spread, 
+          y + sin(angle) * spread, 
+          dustSize, dustSize
+        );
+      }
+    }
+  }
   
-  // Advance the fluid simulation ONLY if the mouse is moving
-  interactionTime += mouseSpeed * 0.003; 
-  
+  // 3. Pass everything into the shader
   shader(theShader);
   theShader.setUniform('u_resolution', [width, height]);
   theShader.setUniform('u_time', interactionTime);
-  
-  // THE FIX: Invert the Y-axis calculation so the shader matches the DOM's top-left origin
-  theShader.setUniform('u_mouse', [mouseX / width, 1.0 - (mouseY / height)]);
+  theShader.setUniform('u_trailMap', trailBuffer); 
   
   beginShape();
   vertex(-1, -1, 0, 0, 0);
@@ -119,4 +157,6 @@ function draw() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+  trailBuffer.resizeCanvas(windowWidth, windowHeight);
+  trailBuffer.background(0); 
 }

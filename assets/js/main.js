@@ -17,16 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Project Data Configuration ---
   const projectData = {
-    work: {
-      title: "Work",
-      images: []
-    },
     books: {
       title: "Books",
       images: ["assets/img/Books/Books_00.jpg", "assets/img/Books/Books_01.jpg", "assets/img/Books/Books_02.jpg", "assets/img/Books/Books_03.jpg", "assets/img/Books/Books_04.jpg", "assets/img/Books/Books_05.jpg"]
     },
     bestFriends: {
-      title: "Best Friends",
+      title: "My Dog and I",
       images: ["assets/img/Best Friends/Best_Friends_01.jpg", "assets/img/Best Friends/Best_Friends_02.jpg", "assets/img/Best Friends/Best_Friends_03.jpg", "assets/img/Best Friends/Best_Friends_04.jpg", "assets/img/Best Friends/Best_Friends_05.jpg"]
     },
     tandR: {
