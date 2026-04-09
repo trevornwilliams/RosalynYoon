@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     books: {
       title: "Books",
-      images: ["assets/img/Books/Books_01.jpg", "assets/img/Books/Books_02.jpg", "assets/img/Books/Books_03.jpg", "assets/img/Books/Books_04.jpg", "assets/img/Books/Books_05.jpg"]
+      images: ["assets/img/Books/Books_00.jpg", "assets/img/Books/Books_01.jpg", "assets/img/Books/Books_02.jpg", "assets/img/Books/Books_03.jpg", "assets/img/Books/Books_04.jpg", "assets/img/Books/Books_05.jpg"]
     },
     bestFriends: {
       title: "Best Friends",
