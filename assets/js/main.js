@@ -10,7 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const projectOverlay = document.getElementById('project-overlay');
   const closeProjectBtn = document.getElementById('close-project');
   const projectTitle = document.getElementById('project-title');
-  const projectImageGrid = document.getElementById('project-image-grid'); // New Grid Element
+  const projectImageGrid = document.getElementById('project-image-grid'); 
+  const lightboxOverlay = document.getElementById('lightbox-overlay');
+  const lightboxImage = document.getElementById('lightbox-image');
+  const closeLightboxBtn = document.getElementById('close-lightbox');
 
   // --- Project Data Configuration ---
   const projectData = {
@@ -93,4 +96,26 @@ document.addEventListener('DOMContentLoaded', () => {
     logoContainer.style.display = 'flex'; 
     projectImageGrid.innerHTML = ''; // Clear the grid when closed
   });
-});
+
+  // --- Event Listeners: Lightbox ---  
+  projectImageGrid.addEventListener('click', (e) => {
+    if (e.target.tagName === 'IMG') {
+      lightboxImage.src = e.target.src; // Copy the image source
+      lightboxOverlay.classList.remove('hidden'); // Show the lightbox
+    }
+  });
+
+  function closeLightbox() {
+    lightboxOverlay.classList.add('hidden');
+    lightboxImage.src = ""; // Clear the image
+  }
+
+  closeLightboxBtn.addEventListener('click', closeLightbox);
+
+  lightboxOverlay.addEventListener('click', (e) => {
+    if (e.target === lightboxOverlay) {
+      closeLightbox();
+    }
+  });
+
+}); // <-- Everything must stay safely inside this final closing bracket!
