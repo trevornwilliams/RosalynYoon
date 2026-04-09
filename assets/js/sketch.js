@@ -88,8 +88,9 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight, WEBGL);
+  let canvas = createCanvas(windowWidth, windowHeight, WEBGL);
   noStroke();
+  canvas.parent('sketch-container'); 
 }
 
 function draw() {

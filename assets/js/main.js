@@ -69,13 +69,13 @@ document.addEventListener('DOMContentLoaded', () => {
       logoContainer.style.display = 'none';
       aboutOverlay.classList.remove('hidden');
     } else {
-      logoContainer.style.display = 'block';
+      logoContainer.style.display = 'flex';
       aboutOverlay.classList.add('hidden');
     }
   });
 
   closeAbout.addEventListener('click', () => {
-    logoContainer.style.display = 'block';
+    logoContainer.style.display = 'flex';
     aboutOverlay.classList.add('hidden');
   });
 
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   closeProjectBtn.addEventListener('click', () => {
     projectOverlay.classList.add('hidden');
-    logoContainer.style.display = 'block'; 
+    logoContainer.style.display = 'flex'; 
     projectImageGrid.innerHTML = ''; // Clear the grid when closed
   });
 });
