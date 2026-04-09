@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const projectData = {
     work: {
       title: "Work",
-      images: ["assets/img/work_1.jpg", "assets/img/work_2.jpg"]
+      images: []
     },
     books: {
       title: "Books",
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     softSculpture: {
       title: "Soft Sculpture",
-      images: ["assets/img/soft_1.jpg", "assets/img/soft_2.jpg"]
+      images: []
     }
   };
 
