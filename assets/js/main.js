@@ -17,21 +17,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Project Data Configuration ---
   const projectData = {
+    work: {
+      title: "Work",
+      images: ["assets/img/work/Work_00.jpg"]
+    },
     books: {
       title: "Books",
       images: ["assets/img/Books/Books_00.jpg", "assets/img/Books/Books_01.jpg", "assets/img/Books/Books_02.jpg", "assets/img/Books/Books_03.jpg", "assets/img/Books/Books_04.jpg", "assets/img/Books/Books_05.jpg"]
     },
     bestFriends: {
       title: "My Dog and I",
-      images: ["assets/img/Best Friends/Best_Friends_01.jpg", "assets/img/Best Friends/Best_Friends_02.jpg", "assets/img/Best Friends/Best_Friends_03.jpg", "assets/img/Best Friends/Best_Friends_04.jpg", "assets/img/Best Friends/Best_Friends_05.jpg"]
+      images: ["assets/img/Best Friends/Best_Friends_01.jpg", "assets/img/Best Friends/Best_Friends_02.jpg", "assets/img/Best Friends/Best_Friends_03.jpg", "assets/img/Best Friends/Best_Friends_04.jpg", "assets/img/Best Friends/Best_Friends_05.jpg", "assets/img/Best Friends/Best_Friends_06.jpg"]
     },
     tandR: {
       title: "Trevor & Rosalyn",
       images: ["assets/img/Trevor-And-Rosalyn/Trevor-And-Rosalyn_00.jpg", "assets/img/Trevor-And-Rosalyn/Trevor-And-Rosalyn_01.jpg", "assets/img/Trevor-And-Rosalyn/Trevor-And-Rosalyn_02.jpg", "assets/img/Trevor-And-Rosalyn/Trevor-And-Rosalyn_03.jpg", "assets/img/Trevor-And-Rosalyn/Trevor-And-Rosalyn_04.jpg", "assets/img/Trevor-And-Rosalyn/Trevor-And-Rosalyn_05.jpg", "assets/img/Trevor-And-Rosalyn/Trevor-And-Rosalyn_06.jpg", "assets/img/Trevor-And-Rosalyn/Trevor-And-Rosalyn_07.jpg", "assets/img/Trevor-And-Rosalyn/Trevor-And-Rosalyn_08.jpg"] 
     },
     softSculpture: {
-      title: "Soft Sculpture",
-      images: []
+      title: "Soft Sculptures",
+      images: ["assets/img/Soft Sculpture/Soft-Sculptures_01.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_02.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_03.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_04.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_05.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_06.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_07.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_08.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_09.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_10.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_11.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_12.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_13.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_14.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_15.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_16.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_17.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_18.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_19.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_20.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_21.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_22.jpg"]
     }
   };
 
@@ -43,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     projectTitle.textContent = data.title;
     
     projectImageGrid.innerHTML = '';
+
 
     data.images.forEach(imgSrc => {
       const imgElement = document.createElement('img');

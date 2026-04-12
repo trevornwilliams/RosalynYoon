@@ -1,6 +1,6 @@
 /* RESET & GENERAL */
 html, body {
-  background: transparent;
+  background: #FAF7F2;
   font-family: 'Urbanist', sans-serif;
   height: 100%;
   margin: 0;
@@ -32,6 +32,12 @@ html, body {
   top: 0;
   width: calc(100% - 40px); 
   z-index: 10;
+}
+
+#header-img {
+  width: 300px; 
+  max-width: 100%;
+  height: auto;
 }
 
 .site-title {
