@@ -7,20 +7,17 @@
   
   <meta
     name="description"
-    content="Rosalyn Yoon is an Artist based in Pasadena, CA."
+    content="Rosalyn Yoon is an Artist based in Los Angeles, CA."
   />
   <meta
     name="keywords"
     content="Rosalyn Yoon, Artist, Los Angeles, Visual Art, Contemporary Art, Digital Art, Illustrator, Needle Felting, Wool, Sculpture, Art Exhibitions, Art Portfolio"
   />
   <meta name="author" content="Rosalyn Yoon" />
-
-  <!-- p5.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.min.js"></script>
   
   <!-- Favicon -->
-  <link rel="icon" href="assets/img/favicon.png" />
-  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+  <link rel="icon" href="assets/img/Favicons/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/img/Favicons/apple-touch-icon.png" />
 
   <!-- Typeface -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,8 +47,6 @@
 </head>
 
 <body>
-  <!-- p5.js Background -->
-  <div id="sketch-container"></div>
 
   <!-- Header -->
   <header id="header">
@@ -79,8 +74,6 @@
     </nav>
   </header>
 
-  
-
   <!-- Logo -->
   <div id="logo-container">
     <img 
@@ -93,13 +86,19 @@
 
   <!-- About -->
 <div id="about-overlay" class="hidden">
-    <div id="about-box">
-      <button id="close-about" aria-label="Close About">&times;</button>
+  <div id="about-box">
+    <button id="close-about" aria-label="Close About">&times;</button>
+    
+    <div class="about-content">
+      <img id="about-img" src="assets/img/RY_About-Me.gif" alt="About Rosalyn Yoon" />
+      
       <p class="font-italic">
         <b>Rosalyn Yoon</b> is an artist based in Los Angeles, CA. She lives with her husband and her three cats and three dogs. It may sometimes feel insane, but her family and food are the main source of her creativity. Every now and then, she gets inspired by beautiful books and nature. If you'd like to say <b>hello</b>, feel free to reach out at <a href="mailto:rosalyn@rosalynyoon.com">rosalyn@rosalynyoon.com</a>.
       </p>
     </div>
+
   </div>
+</div>
 
   <!-- Projects -->
 <div id="project-overlay" class="hidden">
@@ -130,7 +129,6 @@
 
   <!-- JS -->
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/sketch.js"></script>
 
 </body>
 </html>

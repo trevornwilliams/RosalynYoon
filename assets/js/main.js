@@ -48,7 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     projectImageGrid.innerHTML = '';
 
-
+    if (data.images.length < 3) {
+      projectImageGrid.classList.add('few-images');
+    } else {
+      projectImageGrid.classList.remove('few-images');
+    }
+    
     data.images.forEach(imgSrc => {
       const imgElement = document.createElement('img');
       imgElement.src = imgSrc;
