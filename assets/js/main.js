@@ -19,23 +19,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const projectData = {
     work: {
       title: "Work",
-      images: ["assets/img/Work/Work_01.jpg", "assets/img/Work/Work_02.jpg", "assets/img/Work/Work_03.jpg", "assets/img/Work/Work_04.jpg"]
+      images: ["assets/img/Work/Work_01.webp", "assets/img/Work/Work_02.webp", "assets/img/Work/Work_03.webp", "assets/img/Work/Work_04.webp"]
     },
     books: {
       title: "Books",
-      images: ["assets/img/Books/Books_00.jpg", "assets/img/Books/Books_01.jpg", "assets/img/Books/Books_02.jpg", "assets/img/Books/Books_03.jpg", "assets/img/Books/Books_04.jpg", "assets/img/Books/Books_05.jpg"]
+      images: ["assets/img/Books/Books_01.webp", "assets/img/Books/Books_02.webp", "assets/img/Books/Books_03.webp", "assets/img/Books/Books_04.webp", "assets/img/Books/Books_05.webp", "assets/img/Books/Books_06.webp"]
     },
     bestFriends: {
       title: "My Dog and I",
-      images: ["assets/img/Best Friends/Best_Friends_01.jpg", "assets/img/Best Friends/Best_Friends_02.jpg", "assets/img/Best Friends/Best_Friends_03.jpg", "assets/img/Best Friends/Best_Friends_04.jpg", "assets/img/Best Friends/Best_Friends_05.jpg", "assets/img/Best Friends/Best_Friends_06.jpg"]
+      images: ["assets/img/My-Dog-And-I/My-Dog-And-I_01.webp", "assets/img/My-Dog-And-I/My-Dog-And-I_02.webp", "assets/img/My-Dog-And-I/My-Dog-And-I_03.webp", "assets/img/My-Dog-And-I/My-Dog-And-I_04.webp", "assets/img/My-Dog-And-I/My-Dog-And-I_05.webp", "assets/img/My-Dog-And-I/My-Dog-And-I_06.webp"]
     },
     tandR: {
       title: "Trevor & Rosalyn",
-      images: ["assets/img/Trevor-And-Rosalyn/Trevor-And-Rosalyn_00.jpg", "assets/img/Trevor-And-Rosalyn/Trevor-And-Rosalyn_01.jpg", "assets/img/Trevor-And-Rosalyn/Trevor-And-Rosalyn_02.jpg", "assets/img/Trevor-And-Rosalyn/Trevor-And-Rosalyn_03.jpg", "assets/img/Trevor-And-Rosalyn/Trevor-And-Rosalyn_04.jpg", "assets/img/Trevor-And-Rosalyn/Trevor-And-Rosalyn_05.jpg", "assets/img/Trevor-And-Rosalyn/Trevor-And-Rosalyn_06.jpg", "assets/img/Trevor-And-Rosalyn/Trevor-And-Rosalyn_07.jpg", "assets/img/Trevor-And-Rosalyn/Trevor-And-Rosalyn_08.jpg"] 
+      images: ["assets/img/Trevor-And-Rosalyn/Trevor-And-Rosalyn_01.webp", "assets/img/Trevor-And-Rosalyn/Trevor-And-Rosalyn_02.webp", "assets/img/Trevor-And-Rosalyn/Trevor-And-Rosalyn_03.webp", "assets/img/Trevor-And-Rosalyn/Trevor-And-Rosalyn_04.webp", "assets/img/Trevor-And-Rosalyn/Trevor-And-Rosalyn_05.webp", "assets/img/Trevor-And-Rosalyn/Trevor-And-Rosalyn_06.webp", "assets/img/Trevor-And-Rosalyn/Trevor-And-Rosalyn_07.webp", "assets/img/Trevor-And-Rosalyn/Trevor-And-Rosalyn_08.webp", "assets/img/Trevor-And-Rosalyn/Trevor-And-Rosalyn_09.webp"] 
     },
     softSculpture: {
       title: "Soft Sculpture",
-      images: ["assets/img/Soft Sculpture/Soft-Sculptures_01.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_02.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_03.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_04.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_05.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_06.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_07.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_08.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_09.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_10.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_11.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_12.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_13.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_14.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_15.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_16.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_17.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_18.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_19.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_20.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_21.jpg", "assets/img/Soft Sculpture/Soft-Sculptures_22.jpg"]
+      images: ["assets/img/Soft-Sculpture/Soft-Sculpture_01.webp", "assets/img/Soft-Sculpture/Soft-Sculpture_02.webp", "assets/img/Soft-Sculpture/Soft-Sculpture_03.webp", "assets/img/Soft-Sculpture/Soft-Sculpture_04.webp", "assets/img/Soft-Sculpture/Soft-Sculpture_05.webp", "assets/img/Soft-Sculpture/Soft-Sculpture_06.webp", "assets/img/Soft-Sculpture/Soft-Sculpture_07.webp", "assets/img/Soft-Sculpture/Soft-Sculpture_08.webp", "assets/img/Soft-Sculpture/Soft-Sculpture_09.webp", "assets/img/Soft-Sculpture/Soft-Sculpture_10.webp", "assets/img/Soft-Sculpture/Soft-Sculpture_11.webp", "assets/img/Soft-Sculpture/Soft-Sculpture_12.webp", "assets/img/Soft-Sculpture/Soft-Sculpture_13.webp", "assets/img/Soft-Sculpture/Soft-Sculpture_14.webp", "assets/img/Soft-Sculpture/Soft-Sculpture_15.webp", "assets/img/Soft-Sculpture/Soft-Sculpture_16.webp", "assets/img/Soft-Sculpture/Soft-Sculpture_17.webp", "assets/img/Soft-Sculpture/Soft-Sculpture_18.webp", "assets/img/Soft-Sculpture/Soft-Sculpture_19.webp", "assets/img/Soft-Sculpture/Soft-Sculpture_20.webp", "assets/img/Soft-Sculpture/Soft-Sculpture_21.webp", "assets/img/Soft-Sculpture/Soft-Sculpture_22.webp"]
     }
   };
 
