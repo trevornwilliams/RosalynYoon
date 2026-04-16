@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     tandR: {
       title: "Trevor & Rosalyn",
-      images: ["assets/img/Trevor-and-Rosalyn/Trevor-and-Rosalyn_01.webp", "assets/img/Trevor-and-Rosalyn/Trevor-and-Rosalyn_02.webp", "assets/img/Trevor-and-Rosalyn/Trevor-and-Rosalyn_03.webp", "assets/img/Trevor-and-Rosalyn/Trevor-and-Rosalyn_04.webp", "assets/img/Trevor-and-Rosalyn/Trevor-and-Rosalyn_05.webp", "assets/img/Trevor-and-Rosalyn/Trevor-and-Rosalyn_06.webp"]
+      images: ["assets/img/Trevor-and-Rosalyn/Trevor-and-Rosalyn_01.webp", "assets/img/Trevor-and-Rosalyn/Trevor-and-Rosalyn_02.webp", "assets/img/Trevor-and-Rosalyn/Trevor-and-Rosalyn_03.webp", "assets/img/Trevor-and-Rosalyn/Trevor-and-Rosalyn_04.webp", "assets/img/Trevor-and-Rosalyn/Trevor-and-Rosalyn_05.webp", "assets/img/Trevor-and-Rosalyn/Trevor-and-Rosalyn_06.webp", "assets/img/Trevor-and-Rosalyn/Trevor-and-Rosalyn_07.webp", "assets/img/Trevor-and-Rosalyn/Trevor-and-Rosalyn_08.webp", "assets/img/Trevor-and-Rosalyn/Trevor-and-Rosalyn_09.webp"]
     },
     softSculpture: {
       title: "Soft Sculpture",
