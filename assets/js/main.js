@@ -19,15 +19,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const projectData = {
     work: {
       title: "Work",
-      images: ["assets/img/Work/Work_01.webp", "assets/img/Work/Work_02.webp", "assets/img/Work/Work_03.webp", "assets/img/Work/Work_04.webp"]
+      images: ["assets/img/Work/Work_01.webp", "assets/img/Work/Work_02.webp", "assets/img/Work/Work_03.webp", "assets/img/Work/Work_04.webp", "assets/img/Work/Work_05.webp", "assets/img/Work/Work_06.webp", "assets/img/Work/Work_07.webp", "assets/img/Work/Work_08.webp", "assets/img/Work/Work_09.webp", "assets/img/Work/Work_10.webp", "assets/img/Work/Work_11.webp", "assets/img/Work/Work_12.webp", "assets/img/Work/Work_13.webp", "assets/img/Work/Work_14.webp"]
     },
     books: {
       title: "Books",
-      images: ["assets/img/Books/Books_01.webp", "assets/img/Books/Books_02.webp", "assets/img/Books/Books_03.webp", "assets/img/Books/Books_04.webp", "assets/img/Books/Books_05.webp", "assets/img/Books/Books_06.webp"]
+      images: ["assets/img/Books/Books_01.webp", "assets/img/Books/Books_02.webp", "assets/img/Books/Books_04.webp", "assets/img/Books/Books_05.webp", "assets/img/Books/Books_06.webp"]
+    },
+   food: {
+      title: "Food",
+      images: ["assets/img/Food/Food_01.webp", "assets/img/Food/Food_02.webp", "assets/img/Food/Food_03.webp", "assets/img/Food/Food_04.webp", "assets/img/Food/Food_05.webp", "assets/img/Food/Food_06.webp"]
     },
     bestFriends: {
       title: "My Dog and I",
-      images: ["assets/img/My-Dog-And-I/My-Dog-And-I_01.webp", "assets/img/My-Dog-And-I/My-Dog-And-I_02.webp", "assets/img/My-Dog-And-I/My-Dog-And-I_03.webp", "assets/img/My-Dog-And-I/My-Dog-And-I_04.webp", "assets/img/My-Dog-And-I/My-Dog-And-I_05.webp", "assets/img/My-Dog-And-I/My-Dog-And-I_06.webp"]
+      images: ["assets/img/My-Dog-And-I/My-Dog-And-I_01.webp", "assets/img/My-Dog-And-I/My-Dog-And-I_02.webp", "assets/img/My-Dog-And-I/My-Dog-And-I_04.webp", "assets/img/My-Dog-And-I/My-Dog-And-I_05.webp", "assets/img/My-Dog-And-I/My-Dog-And-I_06.webp"]
     },
     tandR: {
       title: "Trevor & Rosalyn",
