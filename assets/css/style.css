@@ -1,6 +1,6 @@
 /* RESET & GENERAL */
 html, body {
-  background: #FAF7F2;
+  background: #FFFFFF;
   font-family: 'Urbanist', sans-serif;
   height: 100%;
   margin: 0;
@@ -76,7 +76,7 @@ html, body {
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #FAF7F2;
+  background-color: #FFFFFF;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
   border-radius: 6px;
@@ -134,7 +134,7 @@ html, body {
 
 /* ABOUT - Box  */
 #about-box {
-  background: #FAF7F2;
+  background: #FFFFFF;
   color: #1f1f1f;
   width: 60vw;
   max-height: 70vh;
@@ -253,7 +253,7 @@ html, body {
 }
 
 #project-box {
-  background: #FAF7F2; 
+  background: #FFFFFF; 
   color: #1f1f1f;
   width: 80vw;
   max-width: 1000px;
