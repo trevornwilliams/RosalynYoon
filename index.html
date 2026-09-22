@@ -50,7 +50,7 @@
 
 <body>
 
-  <!-- Header -->
+<!-- Header -->
   <header id="header">
     <img 
       id="header-img" 
@@ -59,63 +59,45 @@
     />
     <nav class="nav-menu">
       <ul> 
-        <li class="dropdown">
-          <a href="#" class="dropbtn">Illustration <i class="ri-arrow-down-s-line"></i></a>
-          <ul class="dropdown-content">
-            <li><a href="#" class="project-link" data-project="movies">Movies</a></li>
-            <li><a href="#" class="project-link" data-project="books">Books</a></li>
-            <li><a href="#" class="project-link" data-project="food">Food</a></li>
-            <li><a href="#" class="project-link" data-project="work">Work</a></li>
-            <!--- <li><a href="#" class="project-link" data-project="tandR">Trevor & Rosalyn</a></li> --->
-          </ul>
-        </li>
-        
-        <li><a href="#" class="project-link" data-project="softSculpture">Soft Sculpture</a></li>
+        <li><a href="#" id="movies-link">Movies</a></li>
+        <li><a href="#" class="project-link" data-project="work">Work</a></li>
         <li><a href="#about" id="about-link">About</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Logo -->
-  <div id="logo-container">
-    <img 
-      id="logo-img" 
-      src="assets/img/Site/RY_Logo.webp" 
-      alt="Logo" 
-      style="cursor: pointer;"
-    />
-  </div>
+  <!-- Homepage Grid -->
+  <main id="home-gallery-container">
+    <div id="home-gallery-grid"></div>
+  </main>
 
-  <!-- About -->
-<div id="about-overlay" class="hidden">
-  <div id="about-box">
-    <button id="close-about" aria-label="Close About">&times;</button>
-    
-    <div class="about-content">
-      <img id="about-img" src="assets/img/Site/RY_About-Me.gif" alt="About Rosalyn Yoon" />
-      
-      <p class="font-italic">
-        <b>Rosalyn Yoon</b> is an artist based in Los Angeles, CA. She lives with her husband and her three cats and three dogs. It may sometimes feel insane, but her family and food are the main source of her creativity. Every now and then, she gets inspired by beautiful books and nature. If you'd like to say <b>hello</b>, feel free to reach out at <a href="mailto:rosalyn@rosalynyoon.com">rosalyn@rosalynyoon.com</a>.
-      </p>
+  <!-- About Modal -->
+  <div id="about-overlay" class="hidden">
+    <div id="about-box">
+      <button id="close-about" aria-label="Close About">&times;</button>
+      <div class="about-content">
+        <img id="about-img" src="assets/img/Site/RY_About-Me.gif" alt="About Rosalyn Yoon" />
+        <p class="font-italic">
+          <b>Rosalyn Yoon</b> is an artist based in Los Angeles, CA. She lives with her husband and her three cats and three dogs. It may sometimes feel insane, but her family and food are the main source of her creativity. Every now and then, she gets inspired by beautiful books and nature. If you'd like to say <b>hello</b>, feel free to reach out at <a href="mailto:rosalyn@rosalynyoon.com">rosalyn@rosalynyoon.com</a>.
+        </p>
+      </div>
     </div>
-
   </div>
-</div>
 
-  <!-- Projects -->
-<div id="project-overlay" class="hidden">
+  <!-- Work Modal -->
+  <div id="project-overlay" class="hidden">
     <div id="project-box">
       <button id="close-project" aria-label="Close Project">&times;</button>
-      <h2 id="project-title">Project Title</h2>
+      <h2 id="project-title">Work</h2>
       <div id="project-image-grid"></div>
     </div>
   </div>
   
   <!-- Lightbox -->
-<div id="lightbox-overlay" class="hidden">
+  <div id="lightbox-overlay" class="hidden">
     <button id="close-lightbox" aria-label="Close Image">&times;</button>
     <img id="lightbox-image" src="" alt="Enlarged view">
- </div>
+  </div>
 
   <!-- Footer -->
   <footer id="footer">

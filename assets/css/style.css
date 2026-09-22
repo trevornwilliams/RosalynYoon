@@ -10,7 +10,7 @@ html, body {
 /* HEADER */
 #header {
   align-items: center;
-  background-color: transparent;
+  background-color: #FFFFFF;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -101,24 +101,46 @@ html, body {
   display: block;
 }
 
-/* LOGO */
-#logo-container {
-  position: fixed;
-  top: 125px;
-  bottom: 50px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
+/* HOME */
+#home-gallery-container {
+  margin: 150px auto 60px auto; /* Clearance for fixed header and footer */
+  width: 85vw;
+  max-width: 1100px;
+  min-height: calc(100vh - 210px);
 }
 
-#logo-container img {
-  max-width: 60vw;
-  max-height: 100%; 
-  width: auto;
+#home-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  justify-items: center;
+  align-items: center;
+}
+
+#home-gallery-grid img {
+  width: 100%;
+  max-height: 380px;
   object-fit: contain;
+  border-radius: 4px;
+  cursor: zoom-in;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#home-gallery-grid img:hover {
+  transform: scale(1.02);
+  opacity: 0.95;
+}
+
+@media (max-width: 768px) {
+  #home-gallery-container {
+    margin-top: 180px;
+    width: 90vw;
+  }
+
+  #home-gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+  }
 }
 
 /* ABOUT MODAL OVERLAY */
