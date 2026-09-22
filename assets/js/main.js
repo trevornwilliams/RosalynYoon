@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: "Movies",
       images: [
         "assets/img/Movies/The-Devil-Wears-Prada.webp",
+        "assets/img/Movies/The-Drama.webp",
         "assets/img/Movies/Friday-the-13th.webp",
         "assets/img/Movies/Legally-Blonde.webp",
         "assets/img/Movies/Moonrise-Kingdom.webp",
