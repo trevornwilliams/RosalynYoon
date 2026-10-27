@@ -103,7 +103,7 @@ html, body {
 
 /* HOME */
 #home-gallery-container {
-  margin: 150px auto 60px auto; /* Clearance for fixed header and footer */
+  margin: 150px auto 60px auto; 
   width: 85vw;
   max-width: 1100px;
   min-height: calc(100vh - 210px);
@@ -143,8 +143,9 @@ html, body {
   }
 }
 
-/* ABOUT MODAL OVERLAY */
-#about-overlay {
+/* ABOUT & SHOP MODAL OVERLAY */
+#about-overlay, 
+#shop-overlay {
   position: fixed;
   inset: 0; 
   background: rgba(0, 0, 0, 0.4);
@@ -154,8 +155,9 @@ html, body {
   z-index: 999;
 }
 
-/* ABOUT - Box  */
-#about-box {
+/* ABOUT & SHOP - Box  */
+#about-box, 
+#shop-box {
   background: #FFFFFF;
   color: #1f1f1f;
   width: 60vw;
@@ -166,23 +168,26 @@ html, body {
   position: relative;
 }
 
-/* ABOUT - Content Layout */
-.about-content {
+/* ABOUT & SHOP - Content Layout */
+.about-content, 
+.shop-content {
   display: flex;
   align-items: center; 
   gap: 25px;
   margin-top: 15px;
 }
 
-#about-img {
+#about-img, 
+#shop-img {
   width: 450px;
   max-width: 100%;
   height: auto;
   flex-shrink: 0;
 }
 
-/* ABOUT - Close button*/
-#about-box #close-about {
+/* ABOUT & SHOP - Close buttons */
+#about-box #close-about, 
+#shop-box #close-shop {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -248,7 +253,8 @@ html, body {
     font-size: 1.5rem;
   }
 
-  #about-box {
+  #about-box, 
+  #shop-box {
     width: 80vw;
     max-height: 70vh;
   }
@@ -323,7 +329,7 @@ html, body {
   width: 100%;
 }
 
-/* --- LAYOUT FOR 1 OR 2 IMAGES --- */
+/* --- LAYOUT - IMAGES --- */
 #project-image-grid.few-images {
   display: flex;
   justify-content: center;
@@ -366,11 +372,11 @@ html, body {
 #lightbox-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85); /* Darker background */
+  background: rgba(0, 0, 0, 0.85); 
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000; /* Sits on top of the project modal */
+  z-index: 1000; 
 }
 
 #lightbox-image {
